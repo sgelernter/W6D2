@@ -12,12 +12,26 @@ class SQLObject
   end
 
   def self.table_name=(table_name)
-    # ...
+    @table_name = table_name
   end
 
   def self.table_name
-    # ...
+    name_string = self.to_s
+    name_string.tableize
   end
+    # name_arr = []
+    # start = 0
+    # name_string.each_char.with_index do |char, i|
+    #   unless i == 0
+    #     if char.upcase == char
+    #       name_arr << name_string[start...i]
+    #       start = i 
+    #     elsif i == (name_string.length - 1)
+    #       name_arr << name_string[start..i]
+    #     end
+    #   end
+    # end
+    # name_arr.map(&:downcase).join("_")
 
   def self.all
     # ...
